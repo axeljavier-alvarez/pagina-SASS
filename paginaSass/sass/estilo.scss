@@ -1,0 +1,168 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+
+$whitecolor: white;
+$darkbluecolor: darkblue;
+$font-stack: Helvetica, sans-serif;
+@use "sass:color";
+
+// Mixin
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// configuraciones del boton
+@mixin button-base {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+// otro mixin donde se trae las configuraciones del boton y el color del boton
+@mixin yellow-button {
+  @extend button-base !optional; /* Extend the button-base mixin */
+  background-color: yellow; /* Yellow background color */
+}
+
+@mixin boton-primario {
+  @extend button-base !optional; /* Extend the button-base mixin */
+  background-color: red; /* Yellow background color */
+}
+  
+
+body {
+  background: rgb(138,246,239);
+background: linear-gradient(0deg, rgba(138,246,239,1) 0%, rgba(177,212,235,1) 100%);
+}
+
+
+
+// Uso de variables y mixin
+body {
+  font: 100% $font-stack;
+}
+
+h1{
+  color: chartreuse;
+  text-align: center;
+}
+
+
+
+.menuprincipal{
+  background: $darkbluecolor;
+  @include border-radius(5px);
+  padding: 20px;
+  margin: 10px;
+
+}
+
+// clase del boton html y se llama al mixin
+.yellow-button {
+  @include yellow-button; /* Include the green button mixin */
+}
+
+.boton-primario {
+  @include boton-primario; /* Include the green button mixin */
+}
+
+// Anidación
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      a {
+        text-decoration: none;
+        color: $whitecolor;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+/* parte de los grid */
+$columnas:23;
+
+
+.grid {
+    display: grid;
+}
+
+.tabla1{
+    margin-top: 11px;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid black;
+    background-color: gray;
+}
+
+// sumar +1 para que se genere 
+
+.par {
+  display: par;
+}
+
+.par1{
+  margin-top: 11px;
+  text-align: center;
+  font-size: 30px;
+  border: 1px solid black;
+  background-color: gray;
+}
+
+@for $i from 1 to $columnas +1{
+    .grid-#{$i}{
+        grid-template-columns: repeat($i, percentage(1/$i));
+    }
+}
+
+// LISTADO DE NUMEROS PARES 
+
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  } @else if $val == secondary {
+    color: blue;
+  } @else if $val == success {
+    color: green;
+  } @else {
+    color: black; /* Default color */
+  }
+}
+
+
+.text-element {
+  @include text-effect(secondary); /* Apply danger effect */
+}
+
+.another-element {
+  @include text-effect(success); /* Apply secondary effect */
+}
+
+.success-message {
+  @include text-effect(danger); /* Apply success effect */
+}
+
+footer {
+  background: $darkbluecolor;
+  @include border-radius(5px);
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  text-align: center;
+}
+

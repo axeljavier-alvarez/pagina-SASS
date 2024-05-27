@@ -1,0 +1,190 @@
+body {
+  background: rgb(138, 246, 239);
+  background: linear-gradient(0deg, rgb(138, 246, 239) 0%, rgb(177, 212, 235) 100%);
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+}
+
+h1 {
+  color: chartreuse;
+  text-align: center;
+}
+
+.menuprincipal {
+  background: darkblue;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.yellow-button {
+  /* Extend the button-base mixin */
+  background-color: yellow; /* Yellow background color */
+  /* Include the green button mixin */
+}
+
+.boton-primario {
+  /* Extend the button-base mixin */
+  background-color: red; /* Yellow background color */
+  /* Include the green button mixin */
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+nav ul li a:hover {
+  color: #2ecc71;
+}
+
+/* parte de los grid */
+.grid {
+  display: grid;
+}
+
+.tabla1 {
+  margin-top: 11px;
+  text-align: center;
+  font-size: 30px;
+  border: 1px solid black;
+  background-color: gray;
+}
+
+.par {
+  display: par;
+}
+
+.par1 {
+  margin-top: 11px;
+  text-align: center;
+  font-size: 30px;
+  border: 1px solid black;
+  background-color: gray;
+}
+
+.grid-1 {
+  grid-template-columns: repeat(1, 100%);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 50%);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 33.3333333333%);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 25%);
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 20%);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 16.6666666667%);
+}
+
+.grid-7 {
+  grid-template-columns: repeat(7, 14.2857142857%);
+}
+
+.grid-8 {
+  grid-template-columns: repeat(8, 12.5%);
+}
+
+.grid-9 {
+  grid-template-columns: repeat(9, 11.1111111111%);
+}
+
+.grid-10 {
+  grid-template-columns: repeat(10, 10%);
+}
+
+.grid-11 {
+  grid-template-columns: repeat(11, 9.0909090909%);
+}
+
+.grid-12 {
+  grid-template-columns: repeat(12, 8.3333333333%);
+}
+
+.grid-13 {
+  grid-template-columns: repeat(13, 7.6923076923%);
+}
+
+.grid-14 {
+  grid-template-columns: repeat(14, 7.1428571429%);
+}
+
+.grid-15 {
+  grid-template-columns: repeat(15, 6.6666666667%);
+}
+
+.grid-16 {
+  grid-template-columns: repeat(16, 6.25%);
+}
+
+.grid-17 {
+  grid-template-columns: repeat(17, 5.8823529412%);
+}
+
+.grid-18 {
+  grid-template-columns: repeat(18, 5.5555555556%);
+}
+
+.grid-19 {
+  grid-template-columns: repeat(19, 5.2631578947%);
+}
+
+.grid-20 {
+  grid-template-columns: repeat(20, 5%);
+}
+
+.grid-21 {
+  grid-template-columns: repeat(21, 4.7619047619%);
+}
+
+.grid-22 {
+  grid-template-columns: repeat(22, 4.5454545455%);
+}
+
+.grid-23 {
+  grid-template-columns: repeat(23, 4.347826087%);
+}
+
+.text-element {
+  color: blue;
+  /* Apply danger effect */
+}
+
+.another-element {
+  color: green;
+  /* Apply secondary effect */
+}
+
+.success-message {
+  color: red;
+  /* Apply success effect */
+}
+
+footer {
+  background: darkblue;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  text-align: center;
+}/*# sourceMappingURL=estilo.css.map */
