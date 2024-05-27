@@ -26,12 +26,13 @@ $font-stack: Helvetica, sans-serif;
 // otro mixin donde se trae las configuraciones del boton y el color del boton
 @mixin yellow-button {
   @extend button-base !optional; /* Extend the button-base mixin */
-  background-color: yellow; /* Yellow background color */
+  background-color: skyblue; 
+  text-align: right;/* Yellow background color */
 }
 
 @mixin boton-primario {
   @extend button-base !optional; /* Extend the button-base mixin */
-  background-color: red; /* Yellow background color */
+  background-color: white; /* Yellow background color */
 }
   
 
@@ -40,6 +41,10 @@ body {
 background: linear-gradient(0deg, rgba(138,246,239,1) 0%, rgba(177,212,235,1) 100%);
 }
 
+* {
+  font-size: 30px;
+
+}
 
 
 // Uso de variables y mixin
@@ -105,7 +110,6 @@ $columnas:23;
 .tabla1{
     margin-top: 11px;
     text-align: center;
-    font-size: 30px;
     border: 1px solid black;
     background-color: gray;
 }
@@ -119,7 +123,6 @@ $columnas:23;
 .par1{
   margin-top: 11px;
   text-align: center;
-  font-size: 30px;
   border: 1px solid black;
   background-color: gray;
 }
@@ -166,3 +169,84 @@ footer {
   text-align: center;
 }
 
+$statistics: ("first", "second", "third");
+
+:root {
+  --first: white;
+  --second: blue;
+  --third: red;
+}
+
+
+.row {
+  @each $variable in $statistics {
+      $i: index($statistics, $variable);
+       .col:nth-child(#{$i}) {
+         color: var(--#{$variable});
+       }
+   }
+ }
+
+ // segundo grid
+ #tablaNumeros{
+  display: grid;
+  grid-template-areas: "primos pares impares";
+ }
+
+ .numeros-primos{
+  grid-area: primos;
+  width: 400px;
+  border: 2px solid #000;
+
+ }
+
+ .numeros-pares{
+  grid-area: pares;
+  width: 200px;
+  border: 2px solid #000;
+
+ }
+
+ .numeros-impares{
+  grid-area: impares;
+  width: 200px;
+  border: 2px solid #000;
+
+ }
+
+ // tercer grid
+ #seccion3 {
+  display: grid;
+ grid-template-areas: "mision imagen vision";
+
+}
+
+.sectionmision {
+  grid-area: mision;
+  background-color: white;
+  margin: auto;
+  width: 300px;
+  height: 370px;
+  text-align: justify;
+}
+
+.efpem {
+  grid-area: imagen;
+  height: 370px;
+
+}
+
+
+.sectionvision {
+  grid-area: vision;
+  background-color: white;
+  margin: auto;
+  width: 320px;
+  text-align: justify;
+  height: 370px;
+
+}
+
+.col{
+  font-weight: bold;
+}
