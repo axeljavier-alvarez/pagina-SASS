@@ -107,11 +107,23 @@ $columnas:23;
     display: grid;
 }
 
+.grid2 {
+    display: grid;
+}
+
 .tabla1{
     margin-top: 11px;
     text-align: center;
     border: 1px solid black;
     background-color: gray;
+}
+
+// TABLA 2
+.tabla2{
+  margin-top: 11px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
 }
 
 // sumar +1 para que se genere 
@@ -131,6 +143,16 @@ $columnas:23;
     .grid-#{$i}{
         grid-template-columns: repeat($i, percentage(1/$i));
     }
+}
+
+
+// OTRO PARA GENERAR TABLAS PERO ESTA VEZ SERA PARA PONER LOS TIPOS DE NUMERO
+$columnas2:4;
+
+@for $i from 1 to $columnas2 +1{
+  .grid2-#{$i}{
+      grid-template-columns: repeat($i, percentage(1/$i));
+  }
 }
 
 // LISTADO DE NUMEROS PARES 
@@ -249,4 +271,39 @@ $statistics: ("first", "second", "third");
 
 .col{
   font-weight: bold;
+}
+
+// otro
+@for $i from 1 through 5 {
+  .item-#{$i} {
+    font-size: 10px * $i;
+  }
+}
+
+$colors: red, green, blue;
+@each $color in $colors {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+$i: 12;
+
+@while $i > 0 {
+  .while_#{$i} {
+    width: 10px * $i;
+    font-size: 10px;
+  }
+
+  $i: $i - 1;
+}
+
+
+@media screen and(min-width: 768px){
+  @for $i from 1 to $columnas +1{
+    .md-grid-#{$i}{
+        grid-template-columns: repeat($i, percentage(1/$i));
+    }
+}
+
 }
